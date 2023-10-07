@@ -1,0 +1,7 @@
+/venv/
+profile/
+app/*/**/teste.csv
+event.log
+cookies.pkl
+
+__pycache__
