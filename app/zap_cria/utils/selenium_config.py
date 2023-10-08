@@ -13,7 +13,7 @@ profile = os.path.join(dir_path, 'profile', 'wpp')
 
 option = webdriver.ChromeOptions()
 option.add_argument(r"user-data-dir={}".format(profile))
-option.add_argument("--headless=new")
+# option.add_argument("--headless=new")
 
 driver = webdriver.Chrome(service=service, options=option)
 wait_component = WebDriverWait(driver, 90)
