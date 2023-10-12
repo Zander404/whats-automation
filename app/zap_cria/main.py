@@ -19,7 +19,7 @@ driver.get("https://web.whatsapp.com")
 wait_component.until(EC.presence_of_element_located((By.XPATH, init_path)))
 
 
-def send_message(message:str) -> None:
+def send_message(message:str) -> object:
     try:
         wait_component.until(EC.presence_of_element_located((By.XPATH, message_box_path)))
         message_box = driver.find_element(By.XPATH, message_box_path)
@@ -28,8 +28,6 @@ def send_message(message:str) -> None:
         sleep(1)
     except Exception as e:
         return {"response": f"Erro no Envio da Mensagem: {e}"}
-    
-
     
 
 def search_contact(name: str):
@@ -105,4 +103,5 @@ def image_contato(name: int, file: any):
 
     finally:
         return response
+
 

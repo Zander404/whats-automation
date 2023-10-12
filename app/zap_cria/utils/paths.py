@@ -15,7 +15,8 @@ message_box_path: str = '//div[@role="textbox"][@title="Digite uma mensagem"]' #
 
 new_chat_path: str = '//*[@id="app"]/div/div/div[4]/header/div[2]/div/span/div[4]/div/span'
 search_box_unsave_chat_path = '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[1]/div[2]/div[2]/div/div[1]'
-unsave_contact_path = '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[2]' 
+unsave_contact_path = '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[2]'
+save_contact_path = '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div/div/div/div[2]/div' 
 
 
 

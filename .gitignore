@@ -3,5 +3,6 @@ profile/
 app/*/**/teste.csv
 event.log
 cookies.pkl
+/app/zap_cria/teste.py
 
 __pycache__

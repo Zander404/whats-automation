@@ -16,4 +16,4 @@ option.add_argument(r"user-data-dir={}".format(profile))
 # option.add_argument("--headless=new")
 
 driver = webdriver.Chrome(service=service, options=option)
-wait_component = WebDriverWait(driver, 90)
+wait_component = WebDriverWait(driver, 30)
