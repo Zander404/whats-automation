@@ -11,8 +11,8 @@ from selenium.webdriver.support import expected_conditions as EC
 global driver
 global wait_component
 
-from utils.paths import *
-from utils.selenium_config import option, service, driver, wait_component
+from .utils.paths import *
+from .utils.selenium_config import option, service, driver, wait_component
 
 driver.get("https://web.whatsapp.com")
 
@@ -52,7 +52,7 @@ def search_unsave_contact(number: int) -> object:
 
 
 
-def mensagem_direta(name:str, message: str) -> object:
+def direct_message(name:str, message: str) -> object:
     try:
         search_contact(name)
         send_message(message)
@@ -80,7 +80,7 @@ def send_message_unsaved_contact(number:int, message:str) -> object:
         return response
 
 
-def image_contato(name: int, file: any):
+def send_image_for_save_contact(name: int, file: any):
     item = os.path.realpath(file)
 
     try:
