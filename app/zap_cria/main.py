@@ -33,6 +33,8 @@ def send_message(message:str) -> object:
 def search_contact(name: str):
     wait_component.until(EC.presence_of_element_located((By.XPATH, search_box_path)))
     search_box = driver.find_element(By.XPATH, search_box_path)
+    search_box.send_keys(Keys.CONTROL + 'a')
+    search_box.send_keys(Keys.DELETE)
     search_box.send_keys(name)
     wait_component.until(EC.element_to_be_clickable((By.XPATH, f"//div[@role='listitem']//span[@title='{name}']"))).click()
 
@@ -42,6 +44,8 @@ def search_unsave_contact(number: int) -> object:
         wait_component.until(EC.element_to_be_clickable((By.XPATH, new_chat_path))).click()
         wait_component.until(EC.presence_of_element_located((By.XPATH, search_box_unsave_chat_path)))
         search_box_new_chat = driver.find_element(By.XPATH, search_box_unsave_chat_path)
+        search_box_new_chat.send_keys(Keys.CONTROL + 'a')
+        search_box_new_chat.send_keys(Keys.DELETE)
         search_box_new_chat.send_keys(number)
         wait_component.until(EC.presence_of_element_located((By.XPATH, unsave_contact_path)))
         sleep(0.2)
@@ -49,7 +53,6 @@ def search_unsave_contact(number: int) -> object:
     except Exception as e:
         return {"response": f"Erro na procura do contato: {e}"}
         
-
 
 
 def direct_message(name:str, message: str) -> object:
@@ -62,7 +65,7 @@ def direct_message(name:str, message: str) -> object:
         response = {"error": f"A mensagem não foi enviada: {e}"}
 
     finally:
-        return response
+         return response
 
 def send_message_unsaved_contact(number:int, message:str) -> object:
     try:

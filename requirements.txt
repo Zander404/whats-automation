@@ -1,0 +1,8 @@
+fastapi
+python-dotenv
+requests
+selenium
+webdriver-manager
+uvicorn
+AllWhatsPy
+pillow

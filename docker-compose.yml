@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  app:
+    image: zander404/disclito 
+
+  server:
+    image: zander404/servlito
+    ports:
+      - 8000:8080
+
+    depends_on:
+      - nav
+
+
+  nav:
+    image: selenium/standalone-chrome
+    ports: 
+      - 4444:4444 
